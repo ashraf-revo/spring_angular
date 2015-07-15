@@ -29,11 +29,6 @@ public class userServiceImpl implements userService {
         return Repository.findByEmail(email);
     }
 
-    @Override
-    public user save(user user) {
-        return Repository.save(user);
-    }
-
     public String getCurrentLogin() {
         SecurityContext securityContext = SecurityContextHolder.getContext();
         Authentication authentication = securityContext.getAuthentication();

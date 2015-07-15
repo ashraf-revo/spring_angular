@@ -11,7 +11,5 @@ public interface userService {
 
     public Optional<user> findByEmail(String email);
 
-    public user save(user user);
-
     public String getCurrentLogin();
 }

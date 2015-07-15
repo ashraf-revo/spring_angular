@@ -26,8 +26,9 @@ public class MyUserDetails implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         return userRepository.findByEmail(email).
-                map(user -> new User(user.getEmail(), user.getPassword(), user.getRoles().stream().map(r -> new SimpleGrantedAuthority(r)).
-                        collect(Collectors.toSet()))).
+                map(user -> new User(user.getEmail(), user.getPassword(),
+                        user.getRoles().stream().map(r -> new SimpleGrantedAuthority(r)).
+                                collect(Collectors.toSet()))).
                 orElseThrow(() -> new UsernameNotFoundException("not found "));
     }
 }
