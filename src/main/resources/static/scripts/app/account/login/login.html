@@ -1,0 +1,11 @@
+<div>
+    <div ng-show="authenticationError">
+        Authentication failed!
+    </div>
+    <form role="form">
+        <input type="text" id="username" ng-model="username">
+        <input type="password"  id="password" ng-model="password">
+        <input type="checkbox" id="rememberMe" ng-model="rememberMe" checked>rememberme
+        <button type="submit" ng-click="login()">Authenticate</button>
+    </form>
+</div>

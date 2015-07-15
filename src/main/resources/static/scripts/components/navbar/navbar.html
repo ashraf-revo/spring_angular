@@ -1,0 +1,30 @@
+<nav>
+    <div>
+        <div ng-switch="isAuthenticated()">
+            <ul>
+
+                <li ui-sref-active="active">
+                    <a ui-sref="home">
+                        Home
+                    </a>
+                </li>
+
+
+                <li ui-sref-active="active" ng-switch-when="true">
+                    <a href="" ng-click="logout()">
+                        Log out
+                    </a>
+                </li>
+                <li ui-sref-active="active" ng-switch-when="false">
+                    <a ui-sref="login">
+                        Authenticate
+                    </a>
+                </li>
+
+                <li ng-class="{active: $state.includes('admin')}"  ng-switch-when="true" has-role="ROLE_ADMIN">
+                    <a>admin</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
